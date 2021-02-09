@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+:root{
+    --header-color:#d69620;
+}
+header{
+    background-color: var(--header-color);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items:center;
+    border-bottom: 2px solid black;
+}
+.divNav{
+    margin: 15px 30px;
+}
+nav{
+    display: inline;
+}
+.afterHeader{
+    background-color: var(--header-color);
+    border-bottom: 2px solid black;
+}
+nav img.gitHubNav{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+}
+.imagensDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    padding: 15px;
+}
+.fotoFruta{
+    height: 250px;
+    width: 250px;
+    border: 2px solid black;
+}
+.divForm{
+    height: auto;
+    width: 100vw;
+    background-image: linear-gradient(to bottom right, rgb(0, 110, 255), rgb(19, 76, 83));
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputInf{
+    margin: 2px;
+}
+.tableDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table{
+    border: 1px solid black;
+}
