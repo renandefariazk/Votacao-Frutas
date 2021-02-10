@@ -1,8 +1,14 @@
 <?php
-    // if(!empty($_GET['nome']) && !empty($_GET['select'])){
-    //     $nome = $_GET['nome'];
-    //     $select = $_GET['select'];
-    // }
+require './dataBase.php';
+$pdo = new DataBase();
+
+    if(!empty($_POST['nome']) && !empty($_POST['select'])){
+        $nome = $_POST['nome'];
+        $select = $_POST['select'];
+        $pdo->inserir($nome,$select);
+    }else{
+
+    };
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,10 +21,10 @@
 </head>
 <body>
     <header>
-        <div class="divNav">
-            <nav><img src="./assets/GitHub-Mark github icone.png" alt="GitHub" class="gitHubNav"></nav>
-            <nav><img src="" alt="Linkedin"></nav>
-        </div>
+        <nav class="divNav">
+            <a href="https://github.com/renandefariazk"><img src="./assets/GitHub-Mark github icone.png" alt="GitHub" class="iconNav"></a>
+            <img src="./assets/linkedinIcon.png" alt="Linkedin" class="iconNav">
+    </nav>
     </header>
     <main>
         <div class="afterHeader">
@@ -29,7 +35,7 @@
             </div>
         </div>
         <div class="divForm">
-            <form class="form" method="get">
+            <form class="form" method="post">
                 <input type="name" name="nome" placeholder="Seu Nome" class="inputInf">
                 <select name="select" id="escolha" class="inputInf">
                     <option value="manga">manga</option>
@@ -41,14 +47,14 @@
             <div class="tableDiv">
                 <table class="table">
                     <tr>
-                        <th>Fruta</th>
-                        <th>Votos</th>
+                        <th class="tableItens">Fruta</th>
+                        <th class="tableItens">Votos</th>
                     </tr>
                     <?php
-                        // foreach(getVotos() as $votos){
-                        //     echo "<td>$votos[fruta]</td>
-                        //         <td>$votos[votos]</td>"
-                        // }
+                        foreach($pdo->getCount() as $votos){
+                            echo "<tr>"."<td class='tableItens'>".$votos['fruta']."</td>".
+                            "<td class='tableItens'>".$votos['votos']."</td>"."</tr>";
+                        };
                     ?>
                 </table>
             </div>
