@@ -51,9 +51,11 @@ $pdo = new DataBase();
                         <th class="tableItens">Votos</th>
                     </tr>
                     <?php
+                    $id = 1;
                         foreach($pdo->getCount() as $votos){
-                            echo "<tr>"."<td class='tableItens'>".$votos['fruta']."</td>".
-                            "<td class='tableItens'>".$votos['votos']."</td>"."</tr>";
+                            echo "<tr>"."<td class='tableItens' id ='fruta$id'>".$votos['fruta']."</td>".
+                            "<td class='tableItens valorItens'>".$votos['votos']."</td>"."</tr>";
+                            $id++;
                         };
                     ?>
                 </table>

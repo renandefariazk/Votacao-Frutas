@@ -2,7 +2,11 @@
 class DataBase{
     private $pdo;
     function __construct(){
-        $this->pdo = new PDO('mysql:dbname=votar;host=localhost','root','');
+        try{
+            $this->pdo = new PDO('mysql:dbname=votar;host=localhost','root','');
+        }catch(PDOException $erro){
+            echo"Erro:".$erro->getMessage();
+        }
     }
 
     public function get($id){

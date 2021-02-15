@@ -5,6 +5,12 @@
 }
 :root{
     --header-color:#d69620;
+    --fruta-laranja:rgba(255, 166, 0, 0.911);
+    --fruta-manga:rgba(255, 68, 0, 0.863);
+    --fruta-uva:rgba(128, 0, 128, 0.918);
+}
+body{
+    height: 100vh;
 }
 header{
     background-color: var(--header-color);
@@ -14,18 +20,25 @@ header{
     justify-content: flex-end;
     align-items:center;
     border-bottom: 2px solid black;
+    height: 8%;
+}
+main{
+    height: 92%;
 }
 .divNav{
     margin: 15px 30px;
+    width: 10%;
 }
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .afterHeader{
     background-color: var(--header-color);
     border-bottom: 2px solid black;
+    height: 50%;
+    width: 100vw;
 }
 .iconNav{
     height: 30px;
@@ -45,7 +58,7 @@ nav{
     border: 2px solid black;
 }
 .divForm{
-    height: auto;
+    height: 50%;
     width: 100vw;
     background-image: linear-gradient(to bottom right, rgb(0, 110, 255), rgb(19, 76, 83));
 }
@@ -54,6 +67,7 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 20px;
 }
 .inputInf{
     margin: 2px;
@@ -62,10 +76,40 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 50px;
 }
 .table{
     border: 1px solid black;
+    padding: 10px;
 }
 .tableItens{
     text-align: center;
+}
+.valorItens{
+    color: red;
+}
+#fruta1{
+    color:var(--fruta-laranja);
+    font-weight: bold;
+}
+#fruta2{
+    color:var(--fruta-manga);
+    font-weight: bold;
+}
+#fruta3{
+    color: var(--fruta-uva);
+    font-weight: bold;
+}
+.overFruta{
+    animation-name: over;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+@keyframes over {
+    0%{
+        box-shadow: 0px 0px;
+    }
+    100%{
+        box-shadow: 5px 10px rgba(0, 0, 0, 0.253);
+    }
 }
